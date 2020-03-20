@@ -10,7 +10,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -25,11 +25,21 @@ body .grid {
       grid-template-columns: minmax(400px, 45%) minmax(400px, 55%);
 }
 
+@media all and (max-width: 800px) {
+  body .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+}
+
 body .container {
   height: 100%;
 }
 
 body .container .left {
+  height: 100%;
   background: url(imgs/wave.png);
   background-repeat: no-repeat;
   background-position: bottom left;
@@ -45,11 +55,18 @@ body .container .left {
           align-items: center;
 }
 
+@media all and (max-width: 800px) {
+  body .container .left {
+    display: none;
+  }
+}
+
 body .container .left img {
   width: 500px;
 }
 
 body .container .right {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,7 +92,8 @@ body .container .right h1 {
 }
 
 body .container .right form {
-  width: 40%;
+  width: 50%;
+  min-width: 300px;
 }
 
 body .container .right .user,
@@ -202,5 +220,11 @@ body .container .right button {
   font-weight: 500;
   outline-style: none;
   cursor: pointer;
+  -webkit-transition: all ease-out 200ms;
+  transition: all ease-out 200ms;
+}
+
+body .container .right button:hover {
+  background-color: #38d39f;
 }
 /*# sourceMappingURL=style.css.map */
