@@ -52,11 +52,32 @@ body {
       .pass {
         width: 100%;
         input {
+          position: relative;
           outline-style: none;
           width: 100%;
           padding: 15px 40px;
           border: none;
-          border-bottom: 2px solid rgba(128, 128, 128, 0.2);
+          font-size: 1.1rem;
+
+          &:focus ~ label,
+          &:valid ~ label {
+            color: #32bd8f;
+            transform: scale(0.9);
+            top: -10px;
+            left: 30px;
+          }
+          &:focus ~ i,
+          &:valid ~ i {
+            color: #32bd8f;
+          }
+
+          &:focus ~ .underline,
+          &:valid ~ .underline {
+            &::after {
+              right: 0;
+              left: 0;
+            }
+          }
         }
         position: relative;
         i {
@@ -74,7 +95,28 @@ body {
           left: 40px;
           color: rgba(128, 128, 128, 0.4);
           font-weight: 600;
-          cursor: text;
+          pointer-events: none;
+          transition: all ease-out 200ms;
+        }
+
+        .underline {
+          position: relative;
+          width: 100%;
+          height: 2px;
+          background-color: rgba(128, 128, 128, 0.2);
+          transform-origin: center;
+          // transition: all ease-out 200ms;
+
+          &::after {
+            position: absolute;
+            content: "";
+            background-color: #32bd8f;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            transition: all ease-out 200ms;
+          }
         }
       }
       .user {
@@ -89,6 +131,9 @@ body {
           text-decoration: none;
           color: rgba(128, 128, 128, 0.4);
           font-weight: 600;
+          &:hover {
+            color: #32bd8f;
+          }
         }
       }
 
@@ -103,6 +148,7 @@ body {
         font-size: 1.3rem;
         font-weight: 500;
         outline-style: none;
+        cursor: pointer;
       }
     }
   }
