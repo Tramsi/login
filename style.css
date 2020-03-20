@@ -1,0 +1,75 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body .container {
+  height: 100%;
+}
+
+body .container .left {
+  background: url(imgs/wave.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 100% 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .left img {
+  width: 500px;
+}
+
+body .container .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .right img {
+  width: 100px;
+}
+
+body .container .right h1 {
+  margin: 30px 0;
+  font-size: 3rem;
+}
+
+body .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(500px, 45%) minmax(500px, 55%);
+      grid-template-columns: minmax(500px, 45%) minmax(500px, 55%);
+}
+/*# sourceMappingURL=style.css.map */
